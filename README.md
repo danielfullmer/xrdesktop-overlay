@@ -5,25 +5,16 @@ To use, add the following to `configuration.nix`:
 
 ```nix
 {
-  nixpkgs.overlays = [ (import (builtins.fetchTarball { url = "https://github.com/danielfullmer/xrdesktop-overlay/archive/master.tar.gz"; })) ];
+  imports = [ (import (builtins.fetchTarball { url = "https://github.com/danielfullmer/xrdesktop-overlay/archive/master.tar.gz"; })) ];
 
+  # At least one of the following:
+  services.xserver.desktopManager.gnome3.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
+
+  # Also ensure SteamVR is working correctly:
   hardware.steam-hardware.enable = true;
-  
-  environment.systemPackages = [
-    steam
+  environment.systemPackages = [ steam ];
 
-    # If using Gnome:
-    gnomeExtensions.xrdesktop
-
-    # If using KDE:
-    plasma5.kwin-effect-xrdesktop
-    plasma5.kdeplasma-applets-xrdesktop
-    qt5.qttools # TODO: Needed for qdbus, can probably be included in the above derivations
-   ];
-   
-   # At least one of the following:
-   services.xserver.desktopManager.gnome3.enable = true;
-   services.xserver.desktopManager.plasma5.enable = true;
 }
 ```
 
