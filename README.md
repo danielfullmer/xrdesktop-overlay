@@ -11,13 +11,14 @@ To use, add the following to `configuration.nix`:
   
   environment.systemPackages = [
     steam
-    
+
     # If using Gnome:
     gnomeExtensions.xrdesktop
-    
+
     # If using KDE:
     plasma5.kwin-effect-xrdesktop
     plasma5.kdeplasma-applets-xrdesktop
+    qt5.qttools # TODO: Needed for qdbus, can probably be included in the above derivations
    ];
    
    # At least one of the following:
