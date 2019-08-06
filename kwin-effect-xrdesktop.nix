@@ -1,6 +1,6 @@
-{ stdenv, fetchFromGitLab, cmake, extra-cmake-modules, xrdesktop, graphene, libinputsynth, kwin, epoxy }:
+{ mkDerivation, fetchFromGitLab, cmake, extra-cmake-modules, xrdesktop, graphene, libinputsynth, kwin, epoxy }:
 
-stdenv.mkDerivation rec {
+mkDerivation rec {
   pname = "kwin-effect-xrdesktop";
   version = "0.12.1";
 

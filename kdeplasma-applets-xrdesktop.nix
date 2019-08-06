@@ -1,6 +1,6 @@
-{ stdenv, fetchFromGitLab, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qtquickcontrols, kwindowsystem }:
+{ fetchFromGitLab, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qtquickcontrols, kwindowsystem }:
 
-stdenv.mkDerivation rec {
+mkDerivation rec {
   pname = "kwin-effect-xrdesktop";
   version = "0.12.1";
 
