@@ -8,6 +8,11 @@ self: super: {
   xrdesktop = super.callPackage ./xrdesktop.nix {};
 
   plasma5 = super.plasma5.overrideScope' (plasma-self: plasma-super: rec {
+    # Ensure the kwin-effect-xrdesktop plugin runnin in kwin has access to xrdesktop gsettings-schemas
+    kwin = plasma-super.kwin.overrideAttrs (attrs: {
+      qtWrapperArgs = [ ''--prefix XDG_DATA_DIRS  : ${self.xrdesktop}/share/gsettings-schemas/${self.xrdesktop.name}'' ];
+    });
+
     kwin-effect-xrdesktop = super.libsForQt5.callPackage ./kwin-effect-xrdesktop.nix {};
     kdeplasma-applets-xrdesktop = super.libsForQt5.callPackage ./kdeplasma-applets-xrdesktop.nix { inherit kwin-effect-xrdesktop; }; # Probably not the right way to do this.
   });
