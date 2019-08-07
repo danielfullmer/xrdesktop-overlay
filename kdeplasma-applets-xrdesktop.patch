@@ -1,0 +1,22 @@
+diff --git a/package/contents/ui/main.qml b/package/contents/ui/main.qml
+index b781064..83d7bda 100644
+--- a/package/contents/ui/main.qml
++++ b/package/contents/ui/main.qml
+@@ -40,7 +40,7 @@ CheckBox {
+ 
+ 	function toggleAction(checked) {
+ 		console.info("xrdesktop enabled: " + checked)
+-		execToggle.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
++		execToggle.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
+ 	}
+ 
+ 	onCheckedChanged: toggleAction(checked)
+@@ -98,7 +98,7 @@ CheckBox {
+ 		id: timer;
+ 		interval: 2000;
+ 		onTriggered: {
+-			execQuery.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active');
++			execQuery.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active');
+ 		}
+ 		repeat: true;
+ 		running: true;

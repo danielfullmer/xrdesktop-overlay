@@ -1,4 +1,4 @@
-{ fetchFromGitLab, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qtquickcontrols, kwindowsystem }:
+{ mkDerivation, lib, fetchFromGitLab, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qttools, qtquickcontrols, kwindowsystem }:
 
 mkDerivation rec {
   pname = "kwin-effect-xrdesktop";
@@ -14,4 +14,6 @@ mkDerivation rec {
 
   nativeBuildInputs = [ cmake extra-cmake-modules ];
   buildInputs = [ plasma-framework kwin-effect-xrdesktop qtbase qtquickcontrols kwindowsystem ];
+
+  patches = [ (substituteAll { src = ./kdeplasma-applets-xrdesktop.patch; qdbus="${lib.getBin qttools}/bin/qdbus"; }) ];
 }
