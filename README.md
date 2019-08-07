@@ -21,8 +21,7 @@ To use, add the following to `configuration.nix`:
 Then, follow the instructions [here](https://gitlab.freedesktop.org/xrdesktop/xrdesktop/wikis/howto).
 
 ### Current status:
-`xrdesktop` with Gnome shell seems to be working well. `kwin_x11` crashes when enabling xrdesktop.
-
-This has been tested against nixpkgs commit 239fffc90d792b5362a20ec1a009978de7b8f91a (2019-07-28).
+`xrdesktop` has been tested working in both Gnome and KDE/Plasma.
+This has been tested against nixpkgs commit `525eaf407d4edb329ea48f6dc9c6590fb73c779a` (2019-08-03).
 Periodically, the nvidia drivers lock up my system when starting SteamVR while using a compositor (even without xrdesktop).
 I've had slightly better luck with nvidia drivers 430.40--but it's still not stable for me. YMMV
