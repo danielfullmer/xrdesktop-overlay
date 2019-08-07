@@ -1,4 +1,4 @@
-{ mkDerivation, lib, fetchFromGitLab, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qttools, qtquickcontrols, kwindowsystem }:
+{ mkDerivation, lib, fetchFromGitLab, substituteAll, cmake, extra-cmake-modules, plasma-framework, kwin-effect-xrdesktop, qtbase, qttools, qtquickcontrols, kwindowsystem }:
 
 mkDerivation rec {
   pname = "kwin-effect-xrdesktop";
