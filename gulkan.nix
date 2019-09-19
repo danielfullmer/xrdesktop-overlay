@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "gulkan";
-  version = "0.12.1";
+  version = import ./version.nix;
 
   src = fetchFromGitLab {
     domain = "gitlab.freedesktop.org";
     owner = "xrdesktop";
     repo = "gulkan";
     rev = version;
-    sha256 = "1znpq6s7zpb0cpdwh6rnsil6rjidbq4sssdp3x6mz9z8f5ix152b";
+    sha256 = "1sd66bz0kmgr3wn6113rbmh8qxis69b2ndlhlyaym5mrbvv12f7r";
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja glslang gtk-doc docbook_xsl ];

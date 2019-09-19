@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "libinputsynth";
-  version = "0.12.1";
+  version = import ./version.nix;
 
   src = fetchFromGitLab {
     domain = "gitlab.freedesktop.org";
     owner = "xrdesktop";
     repo = "libinputsynth";
     rev = version;
-    sha256 = "0m5ksg26xlvbj2dxwl2cpnqi5whghp4w0g9sjc1zbnid6ms2hf6k";
+    sha256 = "0mia7myrr022djd1py21kf04i10a042gpq4s28g0xh0njsj30jb6";
   };
 
   postPatch = ''

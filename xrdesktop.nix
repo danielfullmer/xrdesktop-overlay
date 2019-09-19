@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "xrdesktop";
-  version = "0.12.1";
+  version = import ./version.nix;
 
   src = fetchFromGitLab {
     domain = "gitlab.freedesktop.org";
     owner = "xrdesktop";
     repo = "xrdesktop";
     rev = version;
-    sha256 = "0say21b4j25k3cp0wcdzx6blrkv4064lyirbbhrd2wv15gd05x1x";
+    sha256 = "1jvh9cfpx2i6n5fhysy18j7siwf1jwiajg54r1afx819psiz1wy2";
   };
 
   postPatch = ''

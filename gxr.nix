@@ -2,14 +2,14 @@
 
 stdenv.mkDerivation rec {
   pname = "gxr";
-  version = "0.12.1";
+  version = import ./version.nix;
 
   src = fetchFromGitLab {
     domain = "gitlab.freedesktop.org";
     owner = "xrdesktop";
     repo = "gxr";
     rev = version;
-    sha256 = "09rbvph9j4wbnn7d2grfv0ac5sdjqanw2w85fvs4zw9jicx27k3s";
+    sha256 = "0z1bgc32m9g4rsjn7sjg05d23irgf041dyk9ljwqj32i5paf2j3k";
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja gtk-doc docbook_xsl ];

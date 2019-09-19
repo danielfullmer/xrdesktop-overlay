@@ -2,14 +2,14 @@
 
 mkDerivation rec {
   pname = "kwin-effect-xrdesktop";
-  version = "0.12.1";
+  version = import ./version.nix;
 
   src = fetchFromGitLab {
     domain = "gitlab.freedesktop.org";
     owner = "xrdesktop";
     repo = "kwin-effect-xrdesktop";
     rev = version;
-    sha256 = "1gd6jz0b4q6aila1cddm98gg0mrjzcnqr348qgf5k72p2dx3cy36";
+    sha256 = "10psq049mz6aag2kn211h20kma21ilh17zhbijmmlhmk2nsajjzs";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules ];
