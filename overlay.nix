@@ -21,8 +21,8 @@ self: super: {
     gnome-shell = gnome-super.gnome-shell.overrideAttrs (attrs: {
       src = super.fetchgit { # fetchFromGitLab doesn't accept fetchSubmodules?
         url  = "https://gitlab.freedesktop.org/xrdesktop/gnome-shell";
-        rev = "3.32.2-xrdesktop-${import ./version.nix}";
-        sha256 = "0y7wd2zhdddq3mldkwmd4hv7wg254dwc6ncinzgaiyak79d3rxfk";
+        rev = "3.34.0-xrdesktop-${import ./version.nix}";
+        sha256 = "03fwz3yj7x8jv339525jy7x240z4i1d9w0a8cnmnkvclw3iary8x";
         fetchSubmodules = true;
       };
 
