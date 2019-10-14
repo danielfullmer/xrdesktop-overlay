@@ -5,7 +5,7 @@ To use, add the following to `configuration.nix`:
 
 ```nix
 {
-  imports = [ (import (builtins.fetchTarball { url = "https://github.com/danielfullmer/xrdesktop-overlay/archive/master.tar.gz"; })) ];
+  imports = [ (builtins.fetchTarball { url = "https://github.com/danielfullmer/xrdesktop-overlay/archive/master.tar.gz"; }) ];
 
   # At least one of the following:
   services.xserver.desktopManager.gnome3.enable = true;
