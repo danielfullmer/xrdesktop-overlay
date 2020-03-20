@@ -9,7 +9,7 @@ mkDerivation rec {
     owner = "xrdesktop";
     repo = "kdeplasma-applets-xrdesktop";
     rev = version;
-    sha256 = "1njc54rc9hjzcsaf7hwq18xsq20hp8hicsnrwgjdbkps0f4s4hh2";
+    sha256 = "0sygyx6ai80sj2x3znra2axy6fd26qv2fgqr8lynfh53n312hc1v";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules ];

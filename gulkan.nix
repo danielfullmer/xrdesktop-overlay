@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitLab, glib, gdk_pixbuf, vulkan-loader, vulkan-headers, graphene, cairo, meson, ninja, pkgconfig, glslang, gtk-doc, docbook_xsl }:
+{ stdenv, fetchFromGitLab, glib, gdk_pixbuf, vulkan-loader, vulkan-headers, graphene, cairo, meson, ninja, pkgconfig, json-glib, glslang, gtk-doc, docbook_xsl }:
 
 stdenv.mkDerivation rec {
   pname = "gulkan";
@@ -9,9 +9,9 @@ stdenv.mkDerivation rec {
     owner = "xrdesktop";
     repo = "gulkan";
     rev = version;
-    sha256 = "1sd66bz0kmgr3wn6113rbmh8qxis69b2ndlhlyaym5mrbvv12f7r";
+    sha256 = "12n5d259mh5h58yi26g2jq0dhybw2gwx7ha75jmlrnq3ccrkfb00";
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja glslang gtk-doc docbook_xsl ];
-  propagatedBuildInputs = [ glib gdk_pixbuf vulkan-loader vulkan-headers graphene cairo ];
+  propagatedBuildInputs = [ glib gdk_pixbuf vulkan-loader vulkan-headers graphene cairo json-glib ];
 }

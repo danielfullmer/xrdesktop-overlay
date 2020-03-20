@@ -1,22 +1,22 @@
 diff --git a/package/contents/ui/main.qml b/package/contents/ui/main.qml
-index b781064..83d7bda 100644
+index fc208ca..b98181b 100644
 --- a/package/contents/ui/main.qml
 +++ b/package/contents/ui/main.qml
-@@ -40,7 +40,7 @@ CheckBox {
+@@ -127,7 +127,7 @@ Item {
+         busyindicatortimer.running = false;
+         busyindicatortimer.running = true;
+         busyindicator.visible = true;
+-        execToggle.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
++        execToggle.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
+     }
  
- 	function toggleAction(checked) {
- 		console.info("xrdesktop enabled: " + checked)
--		execToggle.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
-+		execToggle.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active ' + checked)
- 	}
  
- 	onCheckedChanged: toggleAction(checked)
-@@ -98,7 +98,7 @@ CheckBox {
- 		id: timer;
- 		interval: 2000;
- 		onTriggered: {
--			execQuery.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active');
-+			execQuery.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active');
- 		}
- 		repeat: true;
- 		running: true;
+@@ -193,7 +193,7 @@ Item {
+         id: timer;
+         interval: 2000;
+         onTriggered: {
+-            execQuery.connectSource('qdbus org.kde.KWin /XR org.kde.kwin.XR.active');
++            execQuery.connectSource('@qdbus@ org.kde.KWin /XR org.kde.kwin.XR.active');
+         }
+         repeat: true;
+         triggeredOnStart:true;

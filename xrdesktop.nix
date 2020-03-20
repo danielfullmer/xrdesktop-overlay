@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitLab, pkgconfig, meson, ninja, gxr, gtk-doc, docbook_xsl, glslang, python3 }:
+{ stdenv, fetchFromGitLab, pkgconfig, meson, ninja, gxr, gtk-doc, docbook_xsl, glslang, python3, pythonPackages }:
 
 stdenv.mkDerivation rec {
   pname = "xrdesktop";
@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     owner = "xrdesktop";
     repo = "xrdesktop";
     rev = version;
-    sha256 = "1jvh9cfpx2i6n5fhysy18j7siwf1jwiajg54r1afx819psiz1wy2";
+    sha256 = "0zzg53rlccyyndy8v7k2qs7j9xsa4hfm96g8lxqar63w3ivrqcss";
   };
 
   postPatch = ''
@@ -17,6 +17,12 @@ stdenv.mkDerivation rec {
     patchShebangs res/meson_post_install.py
   '';
 
-  nativeBuildInputs = [ pkgconfig meson ninja glslang gtk-doc docbook_xsl python3 ];
+  nativeBuildInputs = [
+    pkgconfig meson ninja glslang gtk-doc docbook_xsl
+    python3 pythonPackages.pygobject3
+  ];
   propagatedBuildInputs = [ gxr ];
+
+  #doCheck = true;
+  #checkFlags = [ "--no-suite" "xr" "--no-suite" "post-install" ];
 }

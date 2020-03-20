@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     owner = "xrdesktop";
     repo = "libinputsynth";
     rev = version;
-    sha256 = "0mia7myrr022djd1py21kf04i10a042gpq4s28g0xh0njsj30jb6";
+    sha256 = "0j6nxg6581c1s0dhl5d67dk7i8jrafmk829vp43j03ny5aajw8qy";
   };
 
   postPatch = ''

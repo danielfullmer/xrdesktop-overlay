@@ -18,11 +18,17 @@ self: super: {
   });
 
   gnome3 = super.gnome3.overrideScope' (gnome-self: gnome-super: {
-    gnome-shell = gnome-super.gnome-shell.overrideAttrs (attrs: {
+    gnome-shell = gnome-super.gnome-shell.overrideAttrs (attrs: rec {
+      version = "${gnome-super.gnome-shell.version}-xrdesktop-${import ./version.nix}";
+
       src = super.fetchgit { # fetchFromGitLab doesn't accept fetchSubmodules?
         url  = "https://gitlab.freedesktop.org/xrdesktop/gnome-shell";
-        rev = "3.34.0-xrdesktop-${import ./version.nix}";
-        sha256 = "03fwz3yj7x8jv339525jy7x240z4i1d9w0a8cnmnkvclw3iary8x";
+        rev = version;
+        sha256 = {
+          "3.28.4-xrdesktop-0.14.0" = "0000000000000000000000000000000000000000000000000000000000000000";
+          "3.34.4-xrdesktop-0.14.0" = "0snspbn0lijxc2pnwhb7bjrs5kdaybv2gv31f4k3gm8fcl50q6ns";
+          "3.36.0-xrdesktop-0.14.0" = "0000000000000000000000000000000000000000000000000000000000000000";
+        }.${version};
         fetchSubmodules = true;
       };
 

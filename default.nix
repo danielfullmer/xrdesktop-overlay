@@ -8,6 +8,7 @@ with lib;
     let
       desktopManager = config.services.xserver.desktopManager;
     in
-      optional desktopManager.gnome3.enable gnomeExtensions.xrdesktop
-      ++ optionals desktopManager.plasma5.enable [ plasma5.kwin-effect-xrdesktop plasma5.kdeplasma-applets-xrdesktop ];
+      optionals desktopManager.plasma5.enable [ plasma5.kwin-effect-xrdesktop plasma5.kdeplasma-applets-xrdesktop ];
+
+  services.xserver.desktopManager.gnome3.sessionPath = [ pkgs.gnomeExtensions.xrdesktop ];
 }

@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     owner = "xrdesktop";
     repo = "gxr";
     rev = version;
-    sha256 = "0z1bgc32m9g4rsjn7sjg05d23irgf041dyk9ljwqj32i5paf2j3k";
+    sha256 = "1rd9a349grydi0x22f38dfjr1q8a7p4m3hlpm2mzj7qvibblajq0";
   };
 
   nativeBuildInputs = [ pkgconfig meson ninja gtk-doc docbook_xsl ];

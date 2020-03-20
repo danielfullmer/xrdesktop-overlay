@@ -9,7 +9,7 @@ mkDerivation rec {
     owner = "xrdesktop";
     repo = "kwin-effect-xrdesktop";
     rev = version;
-    sha256 = "10psq049mz6aag2kn211h20kma21ilh17zhbijmmlhmk2nsajjzs";
+    sha256 = "1v3f1hxbq462550hcb81xf2gm36j085zs1xa3cchmwdyvy433far";
   };
 
   nativeBuildInputs = [ cmake extra-cmake-modules ];
