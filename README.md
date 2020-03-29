@@ -20,5 +20,5 @@ To use, add the following to `configuration.nix`:
 Then, follow the instructions [here](https://gitlab.freedesktop.org/xrdesktop/xrdesktop/wikis/howto).
 
 ### Current status:
-`xrdesktop` has been tested working in both Gnome and KDE/Plasma.
-This has been tested against nixpkgs commit `b943338ea582aeb9b0a406d7fb75f3f62bc16a9d` (2019-08-03, nixos-unstable channel).
+`xrdesktop` has been tested working in Gnome, but there is currently an issue with KDE/Plasma.
+This has been tested against nixpkgs commit `b7566d771544af8f581003455b87c32878e00933` (2020-02-21, nixos-unstable channel).
